@@ -1,0 +1,49 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 4rem;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.project {
+  display: flex;
+  gap: 4rem;
+  padding: 4rem;
+  border-top: 1px solid var(--border);
+  min-height: 100vh;
+}
+
+.project-sticky {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.project-content {
+  flex: 1;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 4rem;
+  text-align: left;
+}
