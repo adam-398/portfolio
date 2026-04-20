@@ -6,7 +6,8 @@ export default function App() {
 
       <section className="hero">
         <h1>Adam Hodges</h1>
-        <p>Android & full-stack developer</p>
+        <p>Building Android apps, cross-platform tools and web experiences</p>
+        <p>BSc Computing & IT with the Open University, available June 2026</p>
         <a href="https://github.com/adam-398">GitHub →</a>
       </section>
 
