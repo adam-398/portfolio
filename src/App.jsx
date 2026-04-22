@@ -68,10 +68,14 @@ export default function App() {
             Authentication and data storage are handled via Supabase.
           </p>
           <p>
-            Currently implementing AI-powered recommendations, users will be
-            able to receive personalised suggestions based on titles they have
+            Currently implementing AI-powered recommendations, audiobook
+            suggested titles are generated for users based on titles they have
             enjoyed while weighting the attributes which matter most to them,
             powered via the Gemini API.
+          </p>
+          <p>
+            Coming soon, AI-powered recommendations for movies, TV shows and
+            books.
           </p>
           <p>Built with Kotlin and Jetpack Compose</p>
           <a href="https://github.com/adam-398/kindred">GitHub →</a>
