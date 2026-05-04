@@ -9,11 +9,20 @@ import norrsken1 from "./assets/norrsken1.png";
 export default function App() {
   return (
     <div>
-      <section className="hero">
-        <h1>Adam Hodges</h1>
-        <p>Building Android apps, cross-platform tools and web experiences</p>
-        <p>BSc Computing & IT with the Open University, available June 2026</p>
-        <a href="https://github.com/adam-398">GitHub →</a>
+      <section className="min-h-screen flex flex-col justify-center items-start px-16">
+        <h1 className="text-4xl md:text-7xl mb-10">Adam Hodges</h1>
+        <p className="text-lg md:text-xl pb-2">
+          Building Android apps, cross-platform tools and web experiences
+        </p>
+        <p className="text-base md:text-base pb-2">
+          BSc Computing & IT with the Open University, available June 2026
+        </p>
+        <a
+          className="text-lg md:text-md text-[#aa3bff] hover:underline"
+          href="https://github.com/adam-398"
+        >
+          GitHub →
+        </a>
       </section>
 
       <section className="project" id="waymark">
