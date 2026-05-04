@@ -1,8 +1,5 @@
 import "./App.css";
 import waymark1 from "./assets/waymark1.png";
-import kindred1 from "./assets/kindred1.png";
-import kindred2 from "./assets/kindred2.png";
-import kindred3 from "./assets/kindred3.png";
 import fivecut from "./assets/fivecut.png";
 import norrsken1 from "./assets/norrsken1.png";
 import KindredCarousel from "./KindredCarousel";
@@ -37,12 +34,12 @@ export default function App() {
           />
         </div>
         <div className="flex-1">
-          <p>
+          <p className="text-base md:text-md pb-3">
             A full-stack Android application for outdoor enthusiasts, primarily
             focused on northern Sweden, built as a final year dissertation
             project with the Open University.
           </p>
-          <p>
+          <p className="text-base md:text-md pb-3">
             Waymark features GPS tracking and a full range of features and
             entity types, including vindskydd (wind shelters), stugor (mountain
             huts), parking spots, camping spots, foraging spots and route
@@ -50,7 +47,7 @@ export default function App() {
             content including photos, notes and QR codes alongside GPX file
             import and export.
           </p>
-          <p>
+          <p className="text-base md:text-md pb-3">
             Built with Kotlin and Jetpack Compose, with mapping provided by
             MapLibre and tile data from Lantmäteriet (the Swedish mapping
             authority). Backend hosted on Supabase with the PostGIS extension
@@ -66,26 +63,28 @@ export default function App() {
           <KindredCarousel />
         </div>
         <div className="flex-1">
-          <p>
+          <p className="text-base md:text-md pb-3">
             A media tracking app for movies, TV shows, books, and audiobooks.
           </p>
-          <p>
+          <p className="text-base md:text-md pb-3">
             Kindred lets you log and organise your media across four categories,
             track what you have watched or read, manage wishlists, and import
             your existing Audible library directly from a JSON export.
             Authentication and data storage are handled via Supabase.
           </p>
-          <p>
+          <p className="text-base md:text-md pb-3">
             Currently implementing AI-powered recommendations, audiobook
             suggested titles are generated for users based on titles they have
             enjoyed while weighting the attributes which matter most to them,
             powered via the Gemini API.
           </p>
-          <p>
+          <p className="text-base md:text-md pb-3">
             Coming soon, AI-powered recommendations for movies, TV shows and
             books.
           </p>
-          <p>Built with Kotlin and Jetpack Compose</p>
+          <p className="text-base md:text-md pb-3">
+            Built with Kotlin and Jetpack Compose
+          </p>
           <a href="https://github.com/adam-398/kindred">GitHub →</a>
         </div>
       </section>
@@ -101,16 +100,20 @@ export default function App() {
           />
         </div>
         <div className="flex-1">
-          <p>A weather and aurora forecasting app for the Nordic skies</p>
+          <p className="text-base md:text-md pb-3">
+            A weather and aurora forecasting app for the Nordic skies
+          </p>
 
-          <p>
+          <p className="text-base md:text-md pb-3">
             Norrsken features real-time weather data and live aurora tracking to
             help users plan their outdoor activities around the weather and
             northern lights visibility. The app includes reactive
             temperature-based colour coding, custom animated weather effects for
             rain and snow, and clean scrollable UI cards all built natively.
           </p>
-          <p>Built with Kotlin and Jetpack Compose</p>
+          <p className="text-base md:text-md pb-3">
+            Built with Kotlin and Jetpack Compose
+          </p>
           <a href="https://github.com/adam-398/norrsken-kotlin">GitHub →</a>
         </div>
       </section>
@@ -129,16 +132,20 @@ export default function App() {
           />
         </div>
         <div className="flex-1">
-          <p>
+          <p className="text-base md:text-md pb-3">
             A simple woodworking utility application, able to implement "the 5
             cut method" for table fence adjustment. Includes a simple inch to mm
             converter.
           </p>
-          <p>Built with Kotlin and Jetpack Compose</p>
+          <p className="text-base md:text-md pb-3">
+            Built with Kotlin and Jetpack Compose
+          </p>
           <a href="https://github.com/adam-398/5-cut-calculator-kotlin">
             GitHub (Kotlin version) →
           </a>
-          <p>With a version written with React Native</p>
+          <p className="text-base md:text-md pb-3">
+            With a version written with React Native
+          </p>
           <a href="https://github.com/adam-398/5-cut-calculator">GitHub →</a>
         </div>
       </section>
