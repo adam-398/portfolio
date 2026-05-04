@@ -25,7 +25,10 @@ export default function App() {
         </a>
       </section>
 
-      <section className="project" id="waymark">
+      <section
+        className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen"
+        id="waymark"
+      >
         <div className="project-sticky">
           <h2>Waymark</h2>
           <p>Full-stack hiking app</p>
