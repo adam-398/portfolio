@@ -1,43 +1,4 @@
 
-
-.project {
-  display: flex;
-  gap: 4rem;
-  padding: 4rem;
-  border-top: 1px solid var(--border);
-  min-height: 100vh;
-}
-
-.project-sticky {
-  width: 300px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 2rem;
-  height: fit-content;
-}
-
-.project-content {
-  flex: 1;
-}
-
-.project-content p:first-child {
-  padding-top: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-.project-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-.project-sticky img {
-  border-radius: 20px;
-  margin-top: 1rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  width: 300px;
-}
-
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem 4rem;

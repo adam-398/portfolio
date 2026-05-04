@@ -5,12 +5,13 @@ import kindred2 from "./assets/kindred2.png";
 import kindred3 from "./assets/kindred3.png";
 import fivecut from "./assets/fivecut.png";
 import norrsken1 from "./assets/norrsken1.png";
+import KindredCarousel from "./KindredCarousel";
 
 export default function App() {
   return (
     <div>
       <section className="min-h-screen flex flex-col justify-center items-start px-16">
-        <h1 className="text-4xl md:text-7xl mb-10">Adam Hodges</h1>
+        <h1 className="text-4xl md:text-7xl mb-6">Adam Hodges</h1>
         <p className="text-lg md:text-xl pb-2">
           Building Android apps, cross-platform tools and web experiences
         </p>
@@ -25,20 +26,17 @@ export default function App() {
         </a>
       </section>
 
-      <section
-        className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen"
-        id="waymark"
-      >
-        <div className="project-sticky">
-          <h2>Waymark</h2>
+      <section className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen">
+        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
+          <h2 className="text-2xl md:text-3xl">Waymark</h2>
           <p>Full-stack hiking app</p>
           <img
             src={waymark1}
             alt="Waymark app screenshot"
-            style={{ maxWidth: "100%", marginTop: "1rem" }}
+            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
           />
         </div>
-        <div className="project-content">
+        <div className="flex-1">
           <p>
             A full-stack Android application for outdoor enthusiasts, primarily
             focused on northern Sweden, built as a final year dissertation
@@ -61,15 +59,13 @@ export default function App() {
         </div>
       </section>
 
-      <section className="project" id="kindred">
-        <div className="project-sticky">
-          <h2>Kindred</h2>
+      <section className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen">
+        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
+          <h2 className="text-2xl md:text-3xl">Kindred</h2>
           <p>Media tracker with AI recommendations</p>
-          <img src={kindred1} alt="Kindred app screenshot" />
-          <img src={kindred2} alt="Kindred app screenshot" />
-          <img src={kindred3} alt="Kindred app screenshot" />
+          <KindredCarousel />
         </div>
-        <div className="project-content">
+        <div className="flex-1">
           <p>
             A media tracking app for movies, TV shows, books, and audiobooks.
           </p>
@@ -94,13 +90,17 @@ export default function App() {
         </div>
       </section>
 
-      <section className="project" id="norrsken">
-        <div className="project-sticky">
-          <h2>Norrsken</h2>
+      <section className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen">
+        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
+          <h2 className="text-2xl md:text-3xl">Norrsken</h2>
           <p>Weather & aurora forecasting</p>
-          <img src={norrsken1} alt="Norrsken app screenshot" />
+          <img
+            src={norrsken1}
+            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
+            alt="Norrsken app screenshot"
+          />
         </div>
-        <div className="project-content">
+        <div className="flex-1">
           <p>A weather and aurora forecasting app for the Nordic skies</p>
 
           <p>
@@ -115,13 +115,20 @@ export default function App() {
         </div>
       </section>
 
-      <section className="project" id="fivecut">
-        <div className="project-sticky">
-          <h2>5 Cut Calculator</h2>
+      <section
+        className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen"
+        id="fivecut"
+      >
+        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
+          <h2 className="text-2xl md:text-3xl">5 Cut Calculator</h2>
           <p>Woodworking utility</p>
-          <img src={fivecut} alt="5 Cut Calculator screenshot" />
+          <img
+            src={fivecut}
+            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
+            alt="5 Cut Calculator screenshot"
+          />
         </div>
-        <div className="project-content">
+        <div className="flex-1">
           <p>
             A simple woodworking utility application, able to implement "the 5
             cut method" for table fence adjustment. Includes a simple inch to mm
