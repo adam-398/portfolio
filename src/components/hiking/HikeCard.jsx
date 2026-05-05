@@ -1,20 +1,25 @@
-export default function HikeCard({ hike, onClick }) {
+import { motion } from "framer-motion";
+
+export default function HikeCard({ hike, onClick, reverse }) {
   return (
     <div
-      className="flex flex-col md:flex-row gap-8 md:gap-16 cursor-pointer group"
+      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-16 cursor-pointer group text-left w-full`}
       onClick={() => onClick(hike)}
     >
       {/* Hero Image */}
-      <div className="w-full md:w-1/2 aspect-video overflow-hidden rounded-lg">
+      <motion.div
+        layoutId={`hike-image-${hike.id}`}
+        className="w-full md:w-2/3 h-[70vh] overflow-hidden"
+      >
         <img
           src={hike.heroImage}
           alt={hike.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
         />
-      </div>
+      </motion.div>
 
       {/* Details */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center">
+      <div className="w-full md:w-1/3 flex flex-col justify-center">
         <p className="text-sm tracking-widest uppercase opacity-50 mb-2">
           {hike.location} · {hike.date}
         </p>

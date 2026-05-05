@@ -6,7 +6,7 @@ import KindredCarousel from "../KindredCarousel";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-5xl mx-auto">
       <section className="min-h-screen flex flex-col justify-center items-start px-16">
         <h1 className="text-4xl md:text-7xl mb-6">Adam Hodges</h1>
         <p className="text-lg md:text-xl pb-2">

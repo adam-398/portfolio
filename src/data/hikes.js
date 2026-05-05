@@ -1,10 +1,10 @@
 const hikes = [
     {
         id: "kungsleden-2025",
-        title: "Kungsleden 2025",
+        title: "Abisko to Nikkalokuta 2025",
         location: "Sweden",
         date: "June 2025",
-        description: "A 110km trek through the stunning landscapes of northern Sweden, from Abisko to Nikkalokuta. Experience the beauty of the Arctic Circle, with its dramatic mountains, pristine lakes and unique flora and fauna.",
+        description: "A 110km section of kungsleden through the stunning landscapes of northern Sweden, from Abisko to Nikkalokuta. Experience the beauty of the Arctic Circle, with its dramatic mountains, pristine lakes and unique flora and fauna.",
         heroImage: "/images/kungsleden-2025/hero.jpeg",
         images: [
                   "/images/kungsleden-2025/1.jpeg",
