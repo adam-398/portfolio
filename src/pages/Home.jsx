@@ -2,6 +2,7 @@ import "../App.css";
 import waymark1 from "../assets/waymark1.png";
 import norrsken1 from "../assets/norrsken1.png";
 import KindredCarousel from "../KindredCarousel";
+import trailweight1 from "../assets/trailweight1.png";
 
 export default function Home() {
   return (
@@ -57,6 +58,52 @@ export default function Home() {
 
       <section className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen">
         <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
+          <h2 className="text-2xl md:text-3xl">Trail Weight</h2>
+          <p>Gear tracking for hikers</p>
+          <img
+            src={trailweight1}
+            alt="Trail Weight app screenshot"
+            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
+          />
+        </div>
+        <div className="flex-1">
+          <p className="text-base md:text-md pb-3">
+            A gear tracking app for hikers and ultralight backpackers, available
+            on the Google Play Store.
+          </p>
+          <p className="text-base md:text-md pb-3">
+            Trail Weight lets users build and share gear lists, log item weights
+            by category, and visualise total pack weight as a pie chart ordered
+            heaviest to lightest. The app supports metric and imperial units and
+            includes full light and dark mode.
+          </p>
+          <p className="text-base md:text-md pb-3">
+            Transactional email — account confirmation and password reset — is
+            handled via a custom domain setup using Cloudflare and Resend rather
+            than a default provider.
+          </p>
+          <p className="text-base md:text-md pb-3">
+            Built with Kotlin and Jetpack Compose. Backend hosted on Supabase
+            with PostgreSQL.
+          </p>
+          <a
+            href="https://play.google.com/store/apps/details?id=dev.auroralaboratories.trailweight&hl=sv"
+            className="text-[#aa3bff] hover:underline"
+          >
+            Play Store →
+          </a>
+          <span className="mx-2">·</span>
+          <a
+            href="https://github.com/adam-398/trail-weight"
+            className="text-[#aa3bff] hover:underline"
+          >
+            GitHub →
+          </a>
+        </div>
+      </section>
+
+      <section className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen">
+        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
           <h2 className="text-2xl md:text-3xl">Kindred</h2>
           <p>Media tracker with AI recommendations</p>
           <KindredCarousel />
@@ -72,15 +119,19 @@ export default function Home() {
             Authentication and data storage are handled via Supabase.
           </p>
           <p className="text-base md:text-md pb-3">
-            Currently implementing AI-powered recommendations, audiobook
-            suggested titles are generated for users based on titles they have
-            enjoyed while weighting the attributes which matter most to them,
-            powered via the Gemini API.
+            Audiobook suggested titles are generated for users based on titles
+            they have enjoyed while weighting the attributes which matter most
+            to them, powered via the Gemini API.
           </p>
           <p className="text-base md:text-md pb-3">
             Built with Kotlin and Jetpack Compose
           </p>
-          <a href="https://github.com/adam-398/kindred">GitHub →</a>
+          <a
+            href="https://github.com/adam-398/kindred"
+            className="text-[#aa3bff] hover:underline"
+          >
+            GitHub →
+          </a>
         </div>
       </section>
 
@@ -109,7 +160,12 @@ export default function Home() {
           <p className="text-base md:text-md pb-3">
             Built with Kotlin and Jetpack Compose
           </p>
-          <a href="https://github.com/adam-398/norrsken-kotlin">GitHub →</a>
+          <a
+            href="https://github.com/adam-398/norrsken-kotlin"
+            className="text-[#aa3bff] hover:underline"
+          >
+            GitHub →
+          </a>
         </div>
       </section>
 
