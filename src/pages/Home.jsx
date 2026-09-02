@@ -2,7 +2,7 @@ import "../App.css";
 import waymark1 from "../assets/waymark1.png";
 import norrsken1 from "../assets/norrsken1.png";
 import KindredCarousel from "../KindredCarousel";
-import trailweight1 from "../assets/trailweight1.png";
+import TrailWeightCarousel from "../TrailWeightCarousel";
 
 export default function Home() {
   return (
@@ -60,11 +60,7 @@ export default function Home() {
         <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
           <h2 className="text-2xl md:text-3xl">Trail Weight</h2>
           <p>Gear tracking for hikers</p>
-          <img
-            src={trailweight1}
-            alt="Trail Weight app screenshot"
-            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
-          />
+          <TrailWeightCarousel />
         </div>
         <div className="flex-1">
           <p className="text-base md:text-md pb-3">
