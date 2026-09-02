@@ -1,6 +1,5 @@
 import "../App.css";
 import waymark1 from "../assets/waymark1.png";
-import fivecut from "../assets/fivecut.png";
 import norrsken1 from "../assets/norrsken1.png";
 import KindredCarousel from "../KindredCarousel";
 
@@ -13,7 +12,7 @@ export default function Home() {
           Building Android apps, cross-platform tools and web experiences
         </p>
         <p className="text-base md:text-base pb-2">
-          BSc Computing & IT with the Open University, available June 2026
+          BSc Computing & IT with the Open University, available immediately.
         </p>
         <a
           className="text-lg md:text-md text-[#aa3bff] hover:underline"
@@ -79,10 +78,6 @@ export default function Home() {
             powered via the Gemini API.
           </p>
           <p className="text-base md:text-md pb-3">
-            Coming soon, AI-powered recommendations for movies, TV shows and
-            books.
-          </p>
-          <p className="text-base md:text-md pb-3">
             Built with Kotlin and Jetpack Compose
           </p>
           <a href="https://github.com/adam-398/kindred">GitHub →</a>
@@ -115,38 +110,6 @@ export default function Home() {
             Built with Kotlin and Jetpack Compose
           </p>
           <a href="https://github.com/adam-398/norrsken-kotlin">GitHub →</a>
-        </div>
-      </section>
-
-      <section
-        className="flex flex-col md:flex-row gap-16 p-16 border-t border-[#2e303a] min-h-screen"
-        id="fivecut"
-      >
-        <div className="w-72 shrink-0 md:sticky md:top-8 md:h-fit">
-          <h2 className="text-2xl md:text-3xl">5 Cut Calculator</h2>
-          <p>Woodworking utility</p>
-          <img
-            src={fivecut}
-            className="rounded-2xl mt-4 shadow-2xl w-full mx-auto"
-            alt="5 Cut Calculator screenshot"
-          />
-        </div>
-        <div className="flex-1">
-          <p className="text-base md:text-md pb-3">
-            A simple woodworking utility application, able to implement "the 5
-            cut method" for table fence adjustment. Includes a simple inch to mm
-            converter.
-          </p>
-          <p className="text-base md:text-md pb-3">
-            Built with Kotlin and Jetpack Compose
-          </p>
-          <a href="https://github.com/adam-398/5-cut-calculator-kotlin">
-            GitHub (Kotlin version) →
-          </a>
-          <p className="text-base md:text-md pb-3">
-            With a version written with React Native
-          </p>
-          <a href="https://github.com/adam-398/5-cut-calculator">GitHub →</a>
         </div>
       </section>
 
