@@ -1,0 +1,26 @@
+---
+import PhoneFrame from "./PhoneFrame.astro";
+
+interface Props {
+  name: string;
+  description: string;
+  status: string;
+  tech: string[];
+}
+
+const { name, description, status, tech } = Astro.props;
+---
+
+<article>
+  <PhoneFrame class="mb-8 w-28 sm:w-32" />
+
+  <h3 class="mb-3 text-xl font-medium">{name}</h3>
+  <p class="mb-4 text-lg text-ink-muted">{description}</p>
+
+  <p class="mb-3 flex items-center gap-2 text-sm">
+    <span class="size-2 bg-accent" aria-hidden="true"></span>
+    {status}
+  </p>
+
+  <p class="text-sm text-ink-muted">{tech.join(", ")}</p>
+</article>

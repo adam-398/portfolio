@@ -1,0 +1,20 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "aspect-[9/19] rounded-[1.25rem] border border-ink/40 bg-paper p-1.5",
+    className,
+  ]}
+>
+  <div
+    class="flex h-full items-center justify-center rounded-[0.9rem] bg-ink/5 font-mono text-xs text-ink-muted"
+  >
+    screenshot
+  </div>
+</div>
