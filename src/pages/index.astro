@@ -1,25 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+import DeviceMockup from "../components/DeviceMockup.astro";
 ---
 
 <BaseLayout
   title="Aurora Laboratories"
   description="Native apps and web tools built in northern Sweden"
 >
-  <section class="border-b border-line px-6 py-16 sm:px-10 md:py-24 lg:px-16 xl:py-32 2xl:py-48">
-    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-end 2xl:max-w-7xl">
-      <div>
-        <p class="mb-6 text-sm text-ink-muted 2xl:text-base">Software studio in northern Sweden</p>
 
-        <h1 class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl">
-          Mobile apps and web tools,<em>made for you</em>
+<!-- Hero -->
+<Section spacing="large">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-end">
+      <div>
+        <p class="mb-6 text-sm text-ink-muted 2xl:text-base">
+          Software studio in northern Sweden
+        </p>
+
+        <h1
+          class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl"
+        >
+          Mobile apps and web tools, <em>made for you</em>
         </h1>
       </div>
 
       <div class="max-w-sm lg:justify-self-end 2xl:max-w-md">
         <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">
-          Designing and building mobile apps and web tools for small businesses, from first sketch
-          and database design to launch and beyond.
+          Designing and building native mobile apps and web tools for small businesses, from first
+          sketch and database design to launch and beyond.
         </p>
         <a
           href="/contact/"
@@ -29,11 +39,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </a>
       </div>
     </div>
-  </section>
+  </Container>
+</Section>
 
-  <section class="border-b border-line px-6 py-16 sm:px-10 md:py-24 lg:px-16 2xl:py-32">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 2xl:max-w-7xl">
-      <div>
+<!-- Featured project -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
         <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
           <span class="text-ink-muted">Featured project</span>
           <span class="flex items-center gap-2">
@@ -57,25 +70,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           Ask about early access
         </a>
       </div>
+      <DeviceMockup />
 
-      <div class="relative mx-auto w-full max-w-lg pr-8 pb-8 2xl:max-w-xl" aria-hidden="true">
-        <!-- Laptop -->
-        <div>
-          <div class="mx-[6%] aspect-[16/10] rounded-t-xl border border-ink/40 p-2">
-            <div class="flex h-full items-center justify-center rounded-md bg-ink/5 font-mono text-xs text-ink-muted">
-              screenshot
-            </div>
-          </div>
-          <div class="h-3 rounded-b-xl border border-ink/40 bg-paper-raised"></div>
-        </div>
 
-        <!-- Phone -->
-        <div class="absolute right-0 bottom-0 aspect-[9/19] w-24 rounded-[1.25rem] border border-ink/40 bg-paper p-1.5 sm:w-28 lg:w-32 2xl:w-36">
-          <div class="flex h-full items-center justify-center rounded-[0.9rem] bg-ink/5 font-mono text-xs text-ink-muted">
-            screenshot
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+    </Container>
+  </Section>
 </BaseLayout>

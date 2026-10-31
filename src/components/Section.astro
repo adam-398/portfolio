@@ -1,0 +1,22 @@
+---
+interface Props {
+  id?: string;
+  spacing?: "normal" | "large";
+  border?: boolean;
+}
+
+const { id, spacing = "normal", border = true } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={[
+    "px-6 sm:px-10 lg:px-16",
+    spacing === "large"
+      ? "py-16 md:py-24 xl:py-32 2xl:py-48"
+      : "py-16 md:py-24 2xl:py-32",
+    { "border-b border-line": border },
+  ]}
+>
+  <slot />
+</section>
