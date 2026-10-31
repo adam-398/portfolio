@@ -6,33 +6,75 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Aurora Laboratories"
   description="Native apps and web tools built in northern Sweden"
 >
-  <section class="border-b border-line px-6 py-16 sm:px-10 md:py-24 xl:py-32 2xl:py-48">
-    <div
-      class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-end 2xl:max-w-7xl"
-    >
+  <section class="border-b border-line px-6 py-16 sm:px-10 md:py-24 lg:px-16 xl:py-32 2xl:py-48">
+    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-end 2xl:max-w-7xl">
       <div>
-        <p class="mb-6 text-sm text-ink-muted 2xl:text-base">
-          Software studio in northern Sweden
-        </p>
+        <p class="mb-6 text-sm text-ink-muted 2xl:text-base">Software studio in northern Sweden</p>
 
-        <h1
-          class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl"
-        >
-          Mobile apps and web tools, <em>made for you</em>
+        <h1 class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl">
+          Mobile apps and web tools,<em>made for you</em>
         </h1>
       </div>
 
       <div class="max-w-sm lg:justify-self-end 2xl:max-w-md">
         <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">
-          Designing and building native mobile apps and web tools for small
-          businesses, from first sketch and database design to launch and beyond.
+          Designing and building mobile apps and web tools for small businesses, from first sketch
+          and database design to launch and beyond.
         </p>
         <a
-          href="#contact"
+          href="/contact/"
           class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
         >
           Get in touch
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-line px-6 py-16 sm:px-10 md:py-24 lg:px-16 2xl:py-32">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 2xl:max-w-7xl">
+      <div>
+        <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+          <span class="text-ink-muted">Featured project</span>
+          <span class="flex items-center gap-2">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            In development
+          </span>
+        </p>
+
+        <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Counted</h2>
+        <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
+          Ditch the clipboard and count stock in minutes.
+        </p>
+        <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+          A stocktaking app for independent cafés, bars and restaurants. Set it up on your computer,
+          count on your phone, even without signal, and finish with your order list ready.
+        </p>
+        <a
+          href="/contact/"
+          class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
+        >
+          Ask about early access
+        </a>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-lg pr-8 pb-8 2xl:max-w-xl" aria-hidden="true">
+        <!-- Laptop -->
+        <div>
+          <div class="mx-[6%] aspect-[16/10] rounded-t-xl border border-ink/40 p-2">
+            <div class="flex h-full items-center justify-center rounded-md bg-ink/5 font-mono text-xs text-ink-muted">
+              screenshot
+            </div>
+          </div>
+          <div class="h-3 rounded-b-xl border border-ink/40 bg-paper-raised"></div>
+        </div>
+
+        <!-- Phone -->
+        <div class="absolute right-0 bottom-0 aspect-[9/19] w-24 rounded-[1.25rem] border border-ink/40 bg-paper p-1.5 sm:w-28 lg:w-32 2xl:w-36">
+          <div class="flex h-full items-center justify-center rounded-[0.9rem] bg-ink/5 font-mono text-xs text-ink-muted">
+            screenshot
+          </div>
+        </div>
       </div>
     </div>
   </section>
