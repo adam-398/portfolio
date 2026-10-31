@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+/* ---------- Design tokens ---------- */
 @theme {
+  /* Fonts */
   --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+
+  /* Colours (Stone) */
+  --color-paper: #e7e4de;       /* page background */
+  --color-paper-raised: #efede8; /* slightly lighter panels */
+  --color-ink: #2a2724;          /* main text, buttons */
+  --color-ink-muted: #5c5650;    /* labels, secondary text */
+  --color-line: #c9c4bb;         /* dividers and borders */
+  --color-accent: #b0651c;       /* amber details */
+}
+
+/* ---------- Base styles ---------- */
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
 }
