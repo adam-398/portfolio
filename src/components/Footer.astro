@@ -1,0 +1,48 @@
+---
+import Container from "./Container.astro";
+
+const year = new Date().getFullYear();
+
+const links = [
+  { href: "/projects/", label: "Projects" },
+  { href: "/about/", label: "About" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<footer class="border-t border-line px-6 py-8 text-sm sm:px-10 lg:px-16">
+  <Container>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- About -->
+      <div>
+        <p class="mb-3 font-medium">Adam Hodges</p>
+        <p class="text-ink-muted">Developer in northern Sweden</p>
+      </div>
+
+      <!-- Footer navigation -->
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-6">
+          {links.map((link) => (
+            <li>
+              <a href={link.href} class="inline-block py-2 underline-offset-4 hover:underline">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <a
+          href="mailto:contact@auroralaboratories.dev"
+          class="inline-block py-2 underline underline-offset-4"
+        >
+          contact@auroralaboratories.dev
+        </a>
+      </div>
+    </div>
+
+    <p class="mt-8 text-ink-muted">© {year} Adam Hodges</p>
+  </Container>
+</footer>

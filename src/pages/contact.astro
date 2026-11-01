@@ -1,14 +1,81 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
 ---
 
 <BaseLayout
-  title="Projects | Aurora Laboratories"
-  description="Custom software solutions from northern Sweden"
+  title="Contact | Aurora Laboratories"
+  description="Get in touch about an app, website or web tool"
 >
-  <section class="px-6 py-16 sm:px-10 md:py-24 lg:px-16">
-    <div class="mx-auto max-w-6xl 2xl:max-w-7xl">
-      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Contact</h1>
-    </div>
-  </section>
+  <Section border={false}>
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Contact</h1>
+          <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+            I’m always happy to discuss new projects, collaborations and ideas. If you’d like to
+            work together, please use the form, or email me directly.
+          </p>
+          <a
+            href="mailto:contact@auroralaboratories.dev"
+            class="mt-6 inline-block text-lg underline decoration-accent underline-offset-8"
+          >
+            contact@auroralaboratories.dev
+          </a>
+        </div>
+        <div>
+          <form class="grid gap-6" method="POST" action="#">
+            <div>
+              <label for="name" class="mb-2 block text-sm font-medium">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                class="w-full border border-ink/60 bg-paper-raised px-4 py-3 text-base"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="mb-2 block text-sm font-medium">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="w-full border border-ink/60 bg-paper-raised px-4 py-3 text-base"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="mb-2 block text-sm font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="w-full border border-ink/60 bg-paper-raised px-4 py-3 text-base"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="justify-self-start bg-ink px-6 py-3 font-medium text-paper"
+            >
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+    </Container>
+  </Section>
 </BaseLayout>
