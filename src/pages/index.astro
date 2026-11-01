@@ -4,6 +4,9 @@ import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
 import LaptopWithPhone from "../components/LaptopWithPhone.astro";
 import AppCard from "../components/AppCard.astro";
+import trailWeightShot from "../assets/screenshots/trail-weight-hero.png";
+import waymarkShot from "../assets/screenshots/waymark-hero.png";
+import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
 ---
 
 <BaseLayout
@@ -20,7 +23,7 @@ import AppCard from "../components/AppCard.astro";
           </p>
 
           <h1 class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl">
-            Mobile apps and web tools,<em> made for you</em>
+            Mobile apps and web tools,<em>made for you</em>
           </h1>
         </div>
 
@@ -84,18 +87,24 @@ import AppCard from "../components/AppCard.astro";
           description="Track the weight of your hiking gear."
           status="Live on Google Play"
           tech={["Kotlin", "Jetpack Compose", "Supabase"]}
+          image={trailWeightShot}
+          imageAlt="Trail Weight showing a pie chart of a 5 kg Kungsleden pack, broken down by gear category"
         />
         <AppCard
           name="Waymark"
           description="Offline-first hiking for Sweden."
           status="Coming early 2027"
           tech={["Kotlin", "Jetpack Compose", "Supabase", "MapLibre", "Room"]}
+          image={waymarkShot}
+          imageAlt="Waymark showing a topographic map of Norrbotten with a hiking route and saved pins"
         />
         <AppCard
           name="Woodworking calculator"
           description="5 cut method for woodworkers."
           status="Coming soon"
           tech={["Kotlin", "Jetpack Compose"]}
+          image={fiveCutShot}
+          imageAlt="Woodworking helper showing the five-cut method calculator with a fence adjustment result"
         />
       </div>
     </Container>
