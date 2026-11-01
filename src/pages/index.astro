@@ -7,6 +7,8 @@ import AppCard from "../components/AppCard.astro";
 import trailWeightShot from "../assets/screenshots/trail-weight-hero.png";
 import waymarkShot from "../assets/screenshots/waymark-hero.png";
 import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
+import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
+import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
 ---
 
 <BaseLayout
@@ -46,7 +48,7 @@ import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
   <!-- Featured project -->
   <Section>
     <Container>
-      <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div class="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
         <div>
           <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
             <span class="text-ink-muted">Featured project</span>
@@ -72,7 +74,12 @@ import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
             Ask about early access
           </a>
         </div>
-        <LaptopWithPhone />
+        <LaptopWithPhone
+          laptop={countedLaptopShot}
+          laptopAlt="Counted dashboard showing a stocktake in progress, with counts for each storage area"
+          phone={countedPhoneShot}
+          phoneAlt="Counting stock on the Counted phone app, with plus and minus buttons for each product"
+        />
       </div>
     </Container>
   </Section>
@@ -156,5 +163,4 @@ import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
       </div>
     </Container>
   </Section>
-
 </BaseLayout>
