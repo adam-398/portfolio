@@ -1,0 +1,212 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+import LaptopWithPhone from "../components/LaptopWithPhone.astro";
+import AppCard from "../components/AppCard.astro";
+import trailWeightHero from "../assets/screenshots/trail-weight-hero.png";
+import waymarkHero from "../assets/screenshots/waymark-hero.png";
+import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
+import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
+import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
+import PhoneFrame from "../components/PhoneFrame.astro";
+import norrskenHero from "../assets/screenshots/norrsken-hero.png";
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("projects.meta.title")} description={t("projects.meta.description")}>
+  <Section>
+    <Container>
+      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">{t("projects.title")}</h1>
+      <p class="mt-6 text-lg text-ink-muted lg:text-xl">{t("projects.subtitle")}</p>
+    </Container>
+  </Section>
+
+  <!-- Counted overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              {t("projects.counted.status")}
+            </span>
+          </p>
+
+          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+            {t("projects.counted.title")}
+          </h2>
+          <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
+            {t("projects.counted.subtitle")}
+          </p>
+          <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+            {t("projects.counted.description")}
+          </p>
+        </div>
+        <LaptopWithPhone
+          laptop={countedLaptopShot}
+          laptopAlt={t("projects.counted.laptopAlt")}
+          phone={countedPhoneShot}
+          phoneAlt={t("projects.counted.phoneAlt")}
+        />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Trail Weight overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:w-64"
+          image={trailWeightHero}
+          alt={t("projects.trailweight.alt")}
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              {t("projects.trailweight.status")}
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+              {t("projects.trailweight.title")}
+            </h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.trailweight.desc1")}
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.trailweight.desc2part1")}{" "}
+              <a
+                href="https://github.com/adam-398/trailweight"
+                class="underline decoration-accent underline-offset-4"
+              >
+                {t("projects.github")}
+              </a>
+              {t("projects.trailweight.desc2part2")}
+            </p>
+            <p>
+              <a
+                href="https://play.google.com/store/apps/details?id=dev.auroralaboratories.trailweight"
+                class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
+              >
+                {t("projects.trailweight.cta")}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Waymark -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:order-last lg:w-64"
+          image={waymarkHero}
+          alt={t("projects.waymark.alt")}
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              {t("projects.waymark.status")}
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+              {t("projects.waymark.title")}
+            </h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.waymark.desc1")}
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.waymark.desc2")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Woodworking Helper overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame class="w-48 lg:w-64" image={fiveCutShot} alt={t("projects.woodworking.alt")} />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              {t("projects.woodworking.status")}
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+              {t("projects.woodworking.title")}
+            </h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.woodworking.desc1")}
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.woodworking.desc2part1")}{" "}
+              <a
+                href="https://github.com/adam-398/5-cut-calculator-kotlin"
+                class="underline decoration-accent underline-offset-4"
+              >
+                {t("projects.github")}
+              </a>
+              {t("projects.woodworking.desc2part2")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Norrsken -->
+  <Section border={false}>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:order-last lg:w-64"
+          image={norrskenHero}
+          alt={t("projects.norrsken.alt")}
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              {t("projects.norrsken.status")}
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+              {t("projects.norrsken.title")}
+            </h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.norrsken.desc1")}
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              {t("projects.norrsken.desc2part1")}{" "}
+              <a
+                href="https://github.com/adam-398/norrsken-kotlin"
+                class="underline decoration-accent underline-offset-4"
+              >
+                {t("projects.github")}
+              </a>
+              {t("projects.norrsken.desc2part2")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+</BaseLayout>

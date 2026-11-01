@@ -2,6 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
@@ -13,26 +16,13 @@ import Container from "../components/Container.astro";
       <div>
         <h1 class="font-serif text-5xl leading-tight text-ink lg:text-7xl">About</h1>
         <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          I’m a software developer living in northern Sweden where I build mobile apps, websites and
-          web tools, primarily for small businesses, and occasionally for myself when I can’t find
-          the tool I want.
+          {t("about.intro1")}
         </p>
         <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          Before changing career direction, I spent more than ten years in hospitality, starting
-          with hostels and cafés abroad, and culminating in seven years running my own café in
-          Cambridge. The small business environment is where I learned the value of effective,
-          simple software, and the frustration of being forced to use clunky, slow tools that don’t
-          function as expected. Following that direction, I retrained through the Open University,
-          studying Computing and IT. Along the way, I started building my own apps in Kotlin and
-          Jetpack Compose, and web tools in React and TypeScript. Some of them are available on the
-          homepage.
+          {t("about.intro2")}
         </p>
         <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          I gravitate towards simple, dependable software and apps that work offline, because signal
-          isn’t guaranteed in a cellar or on a mountain. I can work with you in English or Swedish.
-          Outside of work when I’m not at a keyboard, I’m usually in the workshop or out walking.
-          Away from keyboards, I enjoy woodworking, build my own computers, and spend as much time
-          in the mountains as the weather allows, which is where Trail Weight and Waymark shine.
+          {t("about.intro3")}
         </p>
       </div>
     </Container>

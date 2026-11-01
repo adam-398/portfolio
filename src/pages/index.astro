@@ -10,8 +10,10 @@ import waymarkShot from "../assets/screenshots/waymark-hero.png";
 import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
 import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
 import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
-import myPhoto from "../assets/my-photo.png";
 import myPhoto2 from "../assets/my-photo-2.png";
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
@@ -24,24 +26,23 @@ import myPhoto2 from "../assets/my-photo-2.png";
       <div class="grid gap-10 lg:grid-cols-2 lg:items-end">
         <div>
           <p class="mb-6 text-sm text-ink-muted 2xl:text-base">
-            Software developer in northern Sweden
+            {t("index.intro")}
           </p>
 
           <h1 class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl">
-            Apps, websites and web tools, <em>made for you</em>
+            {t("index.title2")} <em>{t("index.title2Emphasis")}</em>
           </h1>
         </div>
 
         <div class="max-w-sm lg:justify-self-end 2xl:max-w-md">
           <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">
-            Designing and building mobile apps, websites and web tools for small businesses, from
-            first sketch and database design to launch and beyond.
+            {t("index.intro")}
           </p>
           <a
             href="/contact/"
             class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
           >
-            Get in touch
+            {t("index.intro.button")}
           </a>
         </div>
       </div>
@@ -54,27 +55,25 @@ import myPhoto2 from "../assets/my-photo-2.png";
       <div class="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
         <div>
           <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="text-ink-muted">Featured project</span>
+            <span class="text-ink-muted">{t("index.featuredproject.title1")}</span>
             <span class="flex items-center gap-2">
               <span class="size-2 bg-accent" aria-hidden="true"></span>
-              In development
+              {t("index.featuredproject.title2")}
             </span>
           </p>
 
-          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Counted</h2>
+          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.featuredproject.title3")}</h2>
           <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
-            Ditch the clipboard and count stock in minutes.
+            {t("index.featuredproject.subtitle")}
           </p>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
-            A stocktaking app for independent cafés, bars and restaurants. Set it up on your
-            computer, count on your phone, even without signal, and finish with your order list
-            ready.
+           { t("index.featuredproject.description")}
           </p>
           <a
             href="/contact/"
             class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
           >
-            Ask about early access
+            {t("index.featuredproject.cta")}
           </a>
         </div>
         <LaptopWithPhone
@@ -90,29 +89,29 @@ import myPhoto2 from "../assets/my-photo-2.png";
   <!-- App overview -->
   <Section>
     <Container>
-      <h2 class="mb-12 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Mobile apps</h2>
+      <h2 class="mb-12 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.mobileapps.title")}</h2>
       <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
         <AppCard
-          name="Trail Weight"
-          description="Track the weight of your hiking gear."
-          status="Live on Google Play"
-          tech={["Kotlin", "Jetpack Compose", "Supabase"]}
+          name={t("index.mobileapps.trailweight.title")}
+          description={t("index.mobileapps.trailweight.description")}
+          status={t("index.mobileapps.trailweight.status")}
+          tech={t("index.mobileapps.trailweight.tech").split(", ")}
           image={trailWeightShot}
-          imageAlt="Trail Weight showing a pie chart of a 5 kg Kungsleden pack, broken down by gear category"
+          imageAlt= {t("index.mobileapps.trailweight.imageAlt")}
         />
         <AppCard
-          name="Waymark"
-          description="Offline-first hiking for Sweden."
-          status="Coming early 2027"
-          tech={["Kotlin", "Jetpack Compose", "Supabase", "MapLibre", "Room"]}
+          name={t("index.mobileapps.waymark.title")}
+          description={t("index.mobileapps.waymark.description")}
+          status={t("index.mobileapps.waymark.status")}
+          tech={t("index.mobileapps.waymark.tech").split(", ")}
           image={waymarkShot}
-          imageAlt="Waymark showing a topographic map of Norrbotten with a hiking route and saved pins"
+          imageAlt={t("index.mobileapps.waymark.imagealt")}
         />
         <AppCard
-          name="Woodworking calculator"
-          description="5 cut method for woodworkers."
-          status="Coming soon"
-          tech={["Kotlin", "Jetpack Compose"]}
+          name={t("index.mobileapps.woodworking.title")}
+          description={t("index.mobileapps.woodworking.description")}
+          status={t("index.mobileapps.woodworking.status")}
+          tech={t("index.mobileapps.woodworking.tech").split(", ")}
           image={fiveCutShot}
           imageAlt="Woodworking helper showing the five-cut method calculator with a fence adjustment result"
         />
@@ -126,24 +125,21 @@ import myPhoto2 from "../assets/my-photo-2.png";
       <div class="grid gap-12 lg:grid-cols-[2fr_3fr]">
         <Image
           src={myPhoto2}
-          alt="Adam in his woodworking workshop"
+          alt={t("index.aboutme.alttext")}
           widths={[384, 768]}
           sizes="384px"
           class="aspect-[4/5] w-full max-w-sm object-cover"
         />
         <div>
-          <h2 class="mb-6 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">About me</h2>
+          <h2 class="mb-6 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.aboutme.title")}</h2>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
-            I spent over a decade in hospitality, including seven years running my own café in
-            Cambridge, before retraining with the Open University. Now I build apps and web tools
-            from northern Sweden, for small businesses and for the things I love, like hiking and
-            woodworking.
+            {t("index.aboutme.description")}
           </p>
           <a
             href="/about/"
             class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
           >
-            Learn more about me
+            {t("index.aboutme.cta")}
           </a>
         </div>
       </div>
@@ -154,17 +150,16 @@ import myPhoto2 from "../assets/my-photo-2.png";
   <Section>
     <Container>
       <div class="grid gap-12 lg:grid-cols-2">
-        <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Get in touch</h2>
+        <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.getintouch.title")}</h2>
         <div>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
-            Tell me about your business, your project or your idea, and I’ll get back to you as soon
-            as I can. I’m based in northern Sweden, but I work with clients wherever they are.
+            {t("index.getintouch.description")}
           </p>
           <a
             href="/contact/"
             class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
           >
-            Send me a message
+            {t("index.getintouch.cta")}
           </a>
         </div>
       </div>

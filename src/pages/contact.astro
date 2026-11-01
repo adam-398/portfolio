@@ -3,6 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
 const thanksUrl = new URL("/thanks/", Astro.url).href;
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
@@ -13,10 +16,9 @@ const thanksUrl = new URL("/thanks/", Astro.url).href;
     <Container>
       <div class="grid gap-12 lg:grid-cols-2">
         <div>
-          <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Contact</h1>
+          <h1 class="font-serif text-5xl leading-tight lg:text-7xl">{t("contact.title")}</h1>
           <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-            I’m always happy to discuss new projects, collaborations and ideas. If you’d like to
-            work together, please use the form, or email me directly.
+            {t("contact.intro")}
           </p>
           <a
             href="mailto:contact@auroralaboratories.dev"
@@ -33,7 +35,7 @@ const thanksUrl = new URL("/thanks/", Astro.url).href;
             <input type="hidden" name="redirect" value={thanksUrl} />
             <div>
               <label for="name" class="mb-2 block text-sm font-medium">
-                Name
+                {t("contact.form.name")}
               </label>
               <input
                 id="name"
@@ -47,7 +49,7 @@ const thanksUrl = new URL("/thanks/", Astro.url).href;
 
             <div>
               <label for="email" class="mb-2 block text-sm font-medium">
-                Email
+                {t("contact.form.email")}
               </label>
               <input
                 id="email"
@@ -61,7 +63,7 @@ const thanksUrl = new URL("/thanks/", Astro.url).href;
 
             <div>
               <label for="message" class="mb-2 block text-sm font-medium">
-                Message
+                {t("contact.form.message")}
               </label>
               <textarea
                 id="message"
@@ -76,7 +78,7 @@ const thanksUrl = new URL("/thanks/", Astro.url).href;
               type="submit"
               class="justify-self-start bg-ink px-6 py-3 font-medium text-paper"
             >
-              Send message
+              {t("contact.form.submit")}
             </button>
           </form>
         </div>

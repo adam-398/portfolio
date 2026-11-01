@@ -1,12 +1,20 @@
 ---
 import Container from "./Container.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 
+function getLocalizedPath(path: string) {
+  const cleanPath = path === "/" ? "" : path;
+  return lang === "sv" ? `/sv${cleanPath}` : cleanPath || "/";
+}
+
 const links = [
-  { href: "/projects/", label: "Projects" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" },
+  { href: getLocalizedPath("/projects/"), label: t("footer.nav.projects") },
+  { href: getLocalizedPath("/about/"), label: t("footer.nav.about") },
+  { href: getLocalizedPath("/contact/"), label: t("footer.nav.contact") },
 ];
 ---
 
@@ -16,7 +24,7 @@ const links = [
       <!-- About -->
       <div>
         <p class="mb-3 font-medium">Adam Hodges</p>
-        <p class="text-ink-muted">Developer in northern Sweden</p>
+        <p class="text-ink-muted">{t("footer.role")}</p>
       </div>
 
       <!-- Footer navigation -->

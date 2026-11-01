@@ -2,19 +2,22 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/ui";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout title="Thanks | Aurora Laboratories" description="Your message has been sent">
   <Section border={false}>
     <Container>
-      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Thank you for your message!</h1>
+      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">{t("thanks.title")}</h1>
       <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-        I’ll get back to you as soon as possible. In the meantime, feel free to check out my other{" "}
+        {t("thanks.text")}{" "}
         <a
           href="/projects/"
           class="underline decoration-accent underline-offset-8 hover:decoration-2"
         >
-          projects
+          {t("thanks.link")}
         </a>
         .
       </p>
