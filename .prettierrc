@@ -1,6 +1,6 @@
 {
   "printWidth": 100,
-  "htmlWhitespaceSensitivity": "ignore",
+  "htmlWhitespaceSensitivity": "css",
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./src/styles/global.css",
   "overrides": [
