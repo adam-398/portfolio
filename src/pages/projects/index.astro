@@ -10,6 +10,7 @@ import fiveCutShot from "../../assets/screenshots/five-cut-hero.png";
 import countedLaptopShot from "../../assets/screenshots/stocktake-laptop-hero.png";
 import countedPhoneShot from "../../assets/screenshots/stocktake-phone-hero.png";
 import PhoneFrame from "../../components/PhoneFrame.astro";
+import norrskenHero from "../../assets/screenshots/norrsken-hero.png";
 ---
 
 <BaseLayout
@@ -169,6 +170,47 @@ import PhoneFrame from "../../components/PhoneFrame.astro";
               The app is built with Kotlin and Jetpack Compose and the code is open source on{" "}
               <a
                 href="https://github.com/adam-398/5-cut-calculator-kotlin"
+                class="underline decoration-accent underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Norrsken -->
+  <Section border={false}>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:order-last lg:w-64"
+          image={norrskenHero}
+          alt="Norrsken showing the current weather and aurora forecast for Boden kommun."
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              Coming soon to Google Play
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Norrsken</h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              Norrsken (Swedish for northern lights) combines real-time weather data with live
+              aurora tracking to help you plan around the weather and northern lights visibility.
+              The app features reactive temperature-based colour coding, custom animated weather
+              effects for rain and snow, and clean scrollable UI cards.
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              It’s built with Kotlin and Jetpack Compose, with weather data from the Norwegian
+              Meteorological Institute and aurora data from NOAA. The app is open source on{" "}
+              <a
+                href="https://github.com/adam-398/norrsken-kotlin"
                 class="underline decoration-accent underline-offset-4"
               >
                 GitHub
