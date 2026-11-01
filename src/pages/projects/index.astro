@@ -1,14 +1,183 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import Container from "../../components/Container.astro";
+import LaptopWithPhone from "../../components/LaptopWithPhone.astro";
+import AppCard from "../../components/AppCard.astro";
+import trailWeightHero from "../../assets/screenshots/trail-weight-hero.png";
+import waymarkHero from "../../assets/screenshots/waymark-hero.png";
+import fiveCutShot from "../../assets/screenshots/five-cut-hero.png";
+import countedLaptopShot from "../../assets/screenshots/stocktake-laptop-hero.png";
+import countedPhoneShot from "../../assets/screenshots/stocktake-phone-hero.png";
+import PhoneFrame from "../../components/PhoneFrame.astro";
 ---
 
 <BaseLayout
   title="Projects | Aurora Laboratories"
-  description="Custom software solutions from northern Sweden"
+  description="Apps and tools I’ve built, from stocktaking to hiking."
 >
-  <section class="px-6 py-16 sm:px-10 md:py-24 lg:px-16">
-    <div class="mx-auto max-w-6xl 2xl:max-w-7xl">
+  <Section>
+    <Container>
       <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Projects</h1>
-    </div>
-  </section>
+      <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+        Apps and tools I've built, from stocktaking to hiking.
+      </p>
+    </Container>
+  </Section>
+
+  <!-- Counted overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              In development
+            </span>
+          </p>
+
+          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Counted</h2>
+          <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
+            Ditch the clipboard and count stock in minutes.
+          </p>
+          <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+            A stocktaking app for independent cafés, bars and restaurants. Set it up on your
+            computer, count on your phone, even without signal, and finish with your order list
+            ready.
+          </p>
+        </div>
+        <LaptopWithPhone
+          laptop={countedLaptopShot}
+          laptopAlt="Counted dashboard showing a stocktake in progress, with counts for each storage area"
+          phone={countedPhoneShot}
+          phoneAlt="Counting stock on the Counted phone app, with plus and minus buttons for each product"
+        />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Trail Weight overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:w-64"
+          image={trailWeightHero}
+          alt="Trail Weight app showing a list of hiking gear with weights and a total weight"
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              Now available on Google Play
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Trail Weight</h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              Trail Weight helps hikers and ultralight backpackers track the weight of their gear
+              and instantly see what's dragging them down. Your kit is sorted from heaviest to
+              lightest with a pie chart showing the weight distribution of each category.
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              The app is built with Kotlin and Jetpack Compose, with authentication handled by
+              Supabase, email functionality via Resend, and the code is open source on{" "}
+              <a
+                href="https://github.com/adam-398/trailweight"
+                class="underline decoration-accent underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+            <p>
+              <a
+                href="https://play.google.com/store/apps/details?id=dev.auroralaboratories.trailweight"
+                class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
+              >
+                View on Google Play
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Waymark -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:order-last lg:w-64"
+          image={waymarkHero}
+          alt="Waymark showing a topographic map of the Sarek area with a hiking route and saved pins."
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              Coming early 2027
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">Waymark</h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              Waymark is a Sweden-focused hiking app for planning and saving your trips. Add routes,
+              cabins (stugor), wind shelters (vindskydd), camping spots and fishing locations, and
+              keep them with you offline, with maps that work without signal.
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              It’s built with Kotlin and Jetpack Compose, with Supabase and PostGIS for accounts and
+              geospatial data, and Room for offline storage on the phone. MapLibre powers the maps,
+              using tiles from Lantmäteriet, and Resend handles email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Woodworking Helper overview -->
+  <Section>
+    <Container>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <PhoneFrame
+          class="w-48 lg:w-64"
+          image={fiveCutShot}
+          alt="Woodworking Helper app showing a calculator for the five-cut method to square up a table saw's crosscut sled."
+        />
+        <div>
+          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
+            <span class="flex items-center gap-2">
+              <span class="size-2 bg-accent" aria-hidden="true"></span>
+              Coming soon to Google Play
+            </span>
+          </p>
+          <div class="space-y-6">
+            <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+              Woodworking Helper
+            </h2>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              Not all apps are equally complex, and some solve a single problem. The woodworking
+              helper app is a simple tool that works out exactly how far to adjust your crosscut
+              sled’s fence, using the five-cut method. It’s a small app, but it saves time and
+              solves a real problem alongside providing a quick imperial to metric conversion.
+            </p>
+            <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+              The app is built with Kotlin and Jetpack Compose and the code is open source on{" "}
+              <a
+                href="https://github.com/adam-398/5-cut-calculator-kotlin"
+                class="underline decoration-accent underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
 </BaseLayout>
