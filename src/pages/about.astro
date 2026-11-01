@@ -1,14 +1,40 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
 ---
 
 <BaseLayout
   title="About | Aurora Laboratories"
-  description="Custom software solutions from northern Sweden"
+  description="About Adam, a software developer in northern Sweden."
 >
-  <section class="px-6 py-16 sm:px-10 md:py-24 lg:px-16">
-    <div class="mx-auto max-w-6xl 2xl:max-w-7xl">
-      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">About</h1>
-    </div>
-  </section>
+  <Section border={false}>
+    <Container>
+      <div>
+        <h1 class="font-serif text-5xl leading-tight text-ink lg:text-7xl">About</h1>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+          I’m a software developer living in northern Sweden where I build mobile apps, websites and
+          web tools, primarily for small businesses, and occasionally for myself when I can’t find
+          the tool I want.
+        </p>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+          Before changing career direction, I spent more than ten years in hospitality, starting
+          with hostels and cafés abroad, and culminating in seven years running my own café in
+          Cambridge. The small business environment is where I learned the value of effective,
+          simple software, and the frustration of being forced to use clunky, slow tools that don’t
+          function as expected. Following that direction, I retrained through the Open University,
+          studying Computing and IT. Along the way, I started building my own apps in Kotlin and
+          Jetpack Compose, and web tools in React and TypeScript. Some of them are available on the
+          homepage.
+        </p>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+          I gravitate towards simple, dependable software and apps that work offline, because signal
+          isn’t guaranteed in a cellar or on a mountain. I can work with you in English or Swedish.
+          Outside of work when I’m not at a keyboard, I’m usually in the workshop or out walking.
+          Away from keyboards, I enjoy woodworking, build my own computers, and spend as much time
+          in the mountains as the weather allows, which is where Trail Weight and Waymark shine.
+        </p>
+      </div>
+    </Container>
+  </Section>
 </BaseLayout>
