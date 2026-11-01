@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
@@ -9,6 +10,8 @@ import waymarkShot from "../assets/screenshots/waymark-hero.png";
 import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
 import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
 import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
+import myPhoto from "../assets/my-photo.png";
+import myPhoto2 from "../assets/my-photo-2.png";
 ---
 
 <BaseLayout
@@ -120,10 +123,14 @@ import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
   <!-- About me -->
   <Section>
     <Container>
-      <div class="grid gap-12 lg:grid-cols-2">
-        <div class="flex aspect-[4/5] w-full max-w-sm items-center justify-center bg-ink/5 font-mono text-xs text-ink-muted">
-          photo
-        </div>
+      <div class="grid gap-12 lg:grid-cols-[2fr_3fr]">
+        <Image
+          src={myPhoto2}
+          alt="Adam in his woodworking workshop"
+          widths={[384, 768]}
+          sizes="384px"
+          class="aspect-[4/5] w-full max-w-sm object-cover"
+        />
         <div>
           <h2 class="mb-6 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">About me</h2>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
