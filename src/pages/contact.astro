@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
+const thanksUrl = new URL("/thanks/", Astro.url).href;
 ---
 
 <BaseLayout
@@ -29,6 +30,7 @@ import Container from "../components/Container.astro";
             <input type="hidden" name="access_key" value="68e519da-dcaf-4bc6-8ccb-a86ee6213609" />
             <input type="hidden" name="subject" value="New message from your portfolio site" />
             <input type="checkbox" name="botcheck" class="hidden" />
+            <input type="hidden" name="redirect" value={thanksUrl} />
             <div>
               <label for="name" class="mb-2 block text-sm font-medium">
                 Name

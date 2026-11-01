@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import Container from "../components/Container.astro";
+---
+
+<BaseLayout title="Thanks | Aurora Laboratories" description="Your message has been sent">
+  <Section border={false}>
+    <Container>
+      <h1 class="font-serif text-5xl leading-tight lg:text-7xl">Thank you for your message!</h1>
+      <p class="mt-6 text-lg text-ink-muted lg:text-xl">
+        I’ll get back to you as soon as possible. In the meantime, feel free to check out my other{" "}
+        <a
+          href="/projects/"
+          class="underline decoration-accent underline-offset-8 hover:decoration-2"
+        >
+          projects
+        </a>
+        .
+      </p>
+    </Container>
+  </Section>
+</BaseLayout>
