@@ -1,43 +1,31 @@
-# Astro Starter Kit: Minimal
+# adam-hodges.vercel.app
 
-```sh
-npm create astro@latest -- --template minimal
+My portfolio site. Built with Astro and Tailwind CSS v4, with English and Swedish versions.
+
+Live at https://adam-hodges.vercel.app
+
+## Running it locally
+
+Needs Node 22 or later.
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Then open http://localhost:4321.
 
-## 🚀 Project Structure
+`npm run build` builds the static site into `dist/`, and `npm run preview` serves the build.
 
-Inside of your Astro project, you'll see the following folders and files:
+## How it's put together
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `src/pages/`: one file per page. The Swedish pages in `src/pages/sv/` are just wrappers that import the English page, so there's only one copy of each layout.
+- `src/i18n/ui.ts`: all the text on the site, in English and Swedish. Pages call `t("key")`, and the language comes from the URL. The Swedish object is typed against the English one, so a missing translation is a type error.
+- `src/components/`: Header, Footer, Section, Container and the phone and laptop frames used for screenshots.
+- `src/styles/global.css`: colours and fonts as Tailwind `@theme` tokens.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The contact form posts to Web3Forms. The access key in the form is public by design.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deploying
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pushes to `main` deploy automatically on Vercel.
