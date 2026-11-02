@@ -11,15 +11,14 @@ import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
 import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
 import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
 import myPhoto2 from "../assets/my-photo-2.png";
-import { getLangFromUrl, useTranslations } from "../i18n/ui";
+import { defaultLang, getLangFromUrl, useTranslations } from "../i18n/ui";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = lang === defaultLang ? "" : `/${lang}`;
 ---
 
-<BaseLayout
-  title="Aurora Laboratories"
-  description="Native apps, websites and web tools built in northern Sweden"
->
+<BaseLayout title="Adam Hodges" description={t("meta.description")}>
   <!-- Hero -->
   <Section spacing="large">
     <Container>
@@ -33,9 +32,13 @@ const t = useTranslations(lang);
         </div>
 
         <div class="max-w-sm lg:justify-self-end 2xl:max-w-md">
+          <p class="mb-4 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("index.availability")}
+          </p>
           <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">{t("index.intro")}</p>
           <a
-            href="/contact/"
+            href={`${base}/contact/`}
             class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
           >
             {t("index.intro.button")}
@@ -68,7 +71,7 @@ const t = useTranslations(lang);
             {t("index.featuredproject.description")}
           </p>
           <a
-            href="/contact/"
+            href={`${base}/contact/`}
             class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
           >
             {t("index.featuredproject.cta")}
@@ -76,9 +79,9 @@ const t = useTranslations(lang);
         </div>
         <LaptopWithPhone
           laptop={countedLaptopShot}
-          laptopAlt="Counted dashboard showing a stocktake in progress, with counts for each storage area"
+          laptopAlt={t("projects.counted.laptopAlt")}
           phone={countedPhoneShot}
-          phoneAlt="Counting stock on the Counted phone app, with plus and minus buttons for each product"
+          phoneAlt={t("projects.counted.phoneAlt")}
         />
       </div>
     </Container>
@@ -97,7 +100,7 @@ const t = useTranslations(lang);
           status={t("index.mobileapps.trailweight.status")}
           tech={t("index.mobileapps.trailweight.tech").split(", ")}
           image={trailWeightShot}
-          imageAlt={t("index.mobileapps.trailweight.imageAlt")}
+          imageAlt={t("index.mobileapps.trailweight.imagealt")}
         />
         <AppCard
           name={t("index.mobileapps.waymark.title")}
@@ -113,7 +116,7 @@ const t = useTranslations(lang);
           status={t("index.mobileapps.woodworking.status")}
           tech={t("index.mobileapps.woodworking.tech").split(", ")}
           image={fiveCutShot}
-          imageAlt="Woodworking helper showing the five-cut method calculator with a fence adjustment result"
+          imageAlt={t("index.mobileapps.woodworking.imagealt")}
         />
       </div>
     </Container>
@@ -138,7 +141,7 @@ const t = useTranslations(lang);
             {t("index.aboutme.description")}
           </p>
           <a
-            href="/about/"
+            href={`${base}/about/`}
             class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
           >
             {t("index.aboutme.cta")}
@@ -149,7 +152,7 @@ const t = useTranslations(lang);
   </Section>
 
   <!-- Contact -->
-  <Section>
+  <Section border={false}>
     <Container>
       <div class="grid gap-12 lg:grid-cols-2">
         <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
@@ -160,7 +163,7 @@ const t = useTranslations(lang);
             {t("index.getintouch.description")}
           </p>
           <a
-            href="/contact/"
+            href={`${base}/contact/`}
             class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
           >
             {t("index.getintouch.cta")}

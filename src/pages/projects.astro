@@ -3,13 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Container from "../components/Container.astro";
 import LaptopWithPhone from "../components/LaptopWithPhone.astro";
-import AppCard from "../components/AppCard.astro";
+import PhoneFrame from "../components/PhoneFrame.astro";
+import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
+import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
 import trailWeightHero from "../assets/screenshots/trail-weight-hero.png";
 import waymarkHero from "../assets/screenshots/waymark-hero.png";
 import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
-import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
-import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
-import PhoneFrame from "../components/PhoneFrame.astro";
 import norrskenHero from "../assets/screenshots/norrsken-hero.png";
 import { getLangFromUrl, useTranslations } from "../i18n/ui";
 
@@ -25,25 +24,53 @@ const t = useTranslations(lang);
     </Container>
   </Section>
 
-  <!-- Counted overview -->
-  <Section>
+  <!-- This website -->
+  <Section id="website">
+    <Container>
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div class="lg:order-last">
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.site.status")}
+          </p>
+          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+            {t("projects.site.title")}
+          </h2>
+        </div>
+        <div class="space-y-6 lg:pt-12">
+          <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+            {t("projects.site.desc1")}
+          </p>
+          <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+            {t("projects.site.desc2part1")}{" "}
+            <a
+              href="https://github.com/adam-398/aurora-site"
+              class="underline decoration-accent underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer">{t("projects.github")}</a
+            >{t("projects.site.desc2part2")}
+          </p>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Counted -->
+  <Section id="counted">
     <Container>
       <div class="grid items-center gap-12 lg:grid-cols-[2fr_3fr]">
         <div>
-          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="flex items-center gap-2">
-              <span class="size-2 bg-accent" aria-hidden="true"></span>
-              {t("projects.counted.status")}
-            </span>
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.counted.status")}
           </p>
-
           <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
             {t("projects.counted.title")}
           </h2>
           <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
             {t("projects.counted.subtitle")}
           </p>
-          <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
+          <p class="max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
             {t("projects.counted.description")}
           </p>
         </div>
@@ -57,8 +84,8 @@ const t = useTranslations(lang);
     </Container>
   </Section>
 
-  <!-- Trail Weight overview -->
-  <Section>
+  <!-- Trail Weight -->
+  <Section id="trail-weight">
     <Container>
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <PhoneFrame
@@ -67,11 +94,9 @@ const t = useTranslations(lang);
           alt={t("projects.trailweight.alt")}
         />
         <div>
-          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="flex items-center gap-2">
-              <span class="size-2 bg-accent" aria-hidden="true"></span>
-              {t("projects.trailweight.status")}
-            </span>
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.trailweight.status")}
           </p>
           <div class="space-y-6">
             <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
@@ -85,15 +110,16 @@ const t = useTranslations(lang);
               <a
                 href="https://github.com/adam-398/trailweight"
                 class="underline decoration-accent underline-offset-4"
-              >
-                {t("projects.github")}
-              </a>
-              {t("projects.trailweight.desc2part2")}
+                target="_blank"
+                rel="noopener noreferrer">{t("projects.github")}</a
+              >{t("projects.trailweight.desc2part2")}
             </p>
             <p>
               <a
                 href="https://play.google.com/store/apps/details?id=dev.auroralaboratories.trailweight"
                 class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {t("projects.trailweight.cta")}
               </a>
@@ -105,7 +131,7 @@ const t = useTranslations(lang);
   </Section>
 
   <!-- Waymark -->
-  <Section>
+  <Section id="waymark">
     <Container>
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <PhoneFrame
@@ -114,11 +140,9 @@ const t = useTranslations(lang);
           alt={t("projects.waymark.alt")}
         />
         <div>
-          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="flex items-center gap-2">
-              <span class="size-2 bg-accent" aria-hidden="true"></span>
-              {t("projects.waymark.status")}
-            </span>
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.waymark.status")}
           </p>
           <div class="space-y-6">
             <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
@@ -136,17 +160,15 @@ const t = useTranslations(lang);
     </Container>
   </Section>
 
-  <!-- Woodworking Helper overview -->
-  <Section>
+  <!-- Woodworking Helper -->
+  <Section id="woodworking-helper">
     <Container>
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <PhoneFrame class="w-48 lg:w-64" image={fiveCutShot} alt={t("projects.woodworking.alt")} />
         <div>
-          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="flex items-center gap-2">
-              <span class="size-2 bg-accent" aria-hidden="true"></span>
-              {t("projects.woodworking.status")}
-            </span>
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.woodworking.status")}
           </p>
           <div class="space-y-6">
             <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
@@ -160,10 +182,9 @@ const t = useTranslations(lang);
               <a
                 href="https://github.com/adam-398/5-cut-calculator-kotlin"
                 class="underline decoration-accent underline-offset-4"
-              >
-                {t("projects.github")}
-              </a>
-              {t("projects.woodworking.desc2part2")}
+                target="_blank"
+                rel="noopener noreferrer">{t("projects.github")}</a
+              >{t("projects.woodworking.desc2part2")}
             </p>
           </div>
         </div>
@@ -172,7 +193,7 @@ const t = useTranslations(lang);
   </Section>
 
   <!-- Norrsken -->
-  <Section border={false}>
+  <Section id="norrsken" border={false}>
     <Container>
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <PhoneFrame
@@ -181,11 +202,9 @@ const t = useTranslations(lang);
           alt={t("projects.norrsken.alt")}
         />
         <div>
-          <p class="mb-6 flex items-center gap-4 text-sm 2xl:text-base">
-            <span class="flex items-center gap-2">
-              <span class="size-2 bg-accent" aria-hidden="true"></span>
-              {t("projects.norrsken.status")}
-            </span>
+          <p class="mb-6 flex items-center gap-2 text-sm 2xl:text-base">
+            <span class="size-2 bg-accent" aria-hidden="true"></span>
+            {t("projects.norrsken.status")}
           </p>
           <div class="space-y-6">
             <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
@@ -199,10 +218,9 @@ const t = useTranslations(lang);
               <a
                 href="https://github.com/adam-398/norrsken-kotlin"
                 class="underline decoration-accent underline-offset-4"
-              >
-                {t("projects.github")}
-              </a>
-              {t("projects.norrsken.desc2part2")}
+                target="_blank"
+                rel="noopener noreferrer">{t("projects.github")}</a
+              >{t("projects.norrsken.desc2part2")}
             </p>
           </div>
         </div>

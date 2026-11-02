@@ -30,23 +30,33 @@ const links = [
       <!-- Footer navigation -->
       <nav aria-label="Footer">
         <ul class="flex flex-wrap gap-x-6">
-          {links.map((link) => (
-            <li>
-              <a href={link.href} class="inline-block py-2 underline-offset-4 hover:underline">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.href} class="inline-block py-2 underline-offset-4 hover:underline">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
 
       <!-- Contact -->
-      <div>
+      <div class="flex flex-col items-start">
         <a
           href="mailto:contact@auroralaboratories.dev"
           class="inline-block py-2 underline underline-offset-4"
         >
           contact@auroralaboratories.dev
+        </a>
+        <a
+          href="https://github.com/adam-398"
+          class="inline-block py-2 underline underline-offset-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
         </a>
       </div>
     </div>
