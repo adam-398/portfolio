@@ -25,9 +25,7 @@ const t = useTranslations(lang);
     <Container>
       <div class="grid gap-10 lg:grid-cols-2 lg:items-end">
         <div>
-          <p class="mb-6 text-sm text-ink-muted 2xl:text-base">
-            {t("index.intro")}
-          </p>
+          <p class="mb-6 text-sm text-ink-muted 2xl:text-base">{t("index.title1")}</p>
 
           <h1 class="max-w-3xl font-serif text-5xl leading-tight lg:text-7xl xl:text-8xl 2xl:max-w-4xl">
             {t("index.title2")} <em>{t("index.title2Emphasis")}</em>
@@ -35,9 +33,7 @@ const t = useTranslations(lang);
         </div>
 
         <div class="max-w-sm lg:justify-self-end 2xl:max-w-md">
-          <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">
-            {t("index.intro")}
-          </p>
+          <p class="mb-8 text-lg leading-relaxed text-ink-muted 2xl:text-xl">{t("index.intro")}</p>
           <a
             href="/contact/"
             class="inline-block bg-ink px-6 py-3 font-medium text-paper 2xl:px-8 2xl:py-4"
@@ -62,12 +58,14 @@ const t = useTranslations(lang);
             </span>
           </p>
 
-          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.featuredproject.title3")}</h2>
+          <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+            {t("index.featuredproject.title3")}
+          </h2>
           <p class="mb-6 font-serif text-2xl italic text-ink-muted lg:text-3xl 2xl:text-4xl">
             {t("index.featuredproject.subtitle")}
           </p>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
-           { t("index.featuredproject.description")}
+            {t("index.featuredproject.description")}
           </p>
           <a
             href="/contact/"
@@ -89,7 +87,9 @@ const t = useTranslations(lang);
   <!-- App overview -->
   <Section>
     <Container>
-      <h2 class="mb-12 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.mobileapps.title")}</h2>
+      <h2 class="mb-12 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+        {t("index.mobileapps.title")}
+      </h2>
       <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
         <AppCard
           name={t("index.mobileapps.trailweight.title")}
@@ -97,7 +97,7 @@ const t = useTranslations(lang);
           status={t("index.mobileapps.trailweight.status")}
           tech={t("index.mobileapps.trailweight.tech").split(", ")}
           image={trailWeightShot}
-          imageAlt= {t("index.mobileapps.trailweight.imageAlt")}
+          imageAlt={t("index.mobileapps.trailweight.imageAlt")}
         />
         <AppCard
           name={t("index.mobileapps.waymark.title")}
@@ -131,7 +131,9 @@ const t = useTranslations(lang);
           class="aspect-[4/5] w-full max-w-sm object-cover"
         />
         <div>
-          <h2 class="mb-6 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.aboutme.title")}</h2>
+          <h2 class="mb-6 font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+            {t("index.aboutme.title")}
+          </h2>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
             {t("index.aboutme.description")}
           </p>
@@ -150,7 +152,9 @@ const t = useTranslations(lang);
   <Section>
     <Container>
       <div class="grid gap-12 lg:grid-cols-2">
-        <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">{t("index.getintouch.title")}</h2>
+        <h2 class="font-serif text-5xl leading-tight lg:text-6xl 2xl:text-7xl">
+          {t("index.getintouch.title")}
+        </h2>
         <div>
           <p class="mb-8 max-w-md text-lg leading-relaxed text-ink-muted 2xl:max-w-lg 2xl:text-xl">
             {t("index.getintouch.description")}
