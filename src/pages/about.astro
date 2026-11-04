@@ -5,6 +5,14 @@ import Container from "../components/Container.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/ui";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const skillGroups = [
+  { heading: t("about.skills.languages"), items: ["TypeScript", "Kotlin"] },
+  { heading: t("about.skills.mobile"), items: ["Jetpack Compose", "Room", "React Native"] },
+  { heading: t("about.skills.web"), items: ["React", "Astro", "Tailwind"] },
+  { heading: t("about.skills.backend"), items: ["PostgreSQL", "PostGIS", "Supabase"] },
+  { heading: t("about.skills.tools"), items: ["Git", "Vite"] },
+];
 ---
 
 <BaseLayout
@@ -14,16 +22,33 @@ const t = useTranslations(lang);
   <Section border={false}>
     <Container>
       <div>
-        <h1 class="font-serif text-5xl leading-tight text-ink lg:text-7xl">About</h1>
-        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          {t("about.intro1")}
-        </p>
-        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          {t("about.intro2")}
-        </p>
-        <p class="mt-6 text-lg text-ink-muted lg:text-xl">
-          {t("about.intro3")}
-        </p>
+        <h1 class="font-serif text-5xl leading-tight text-ink lg:text-7xl">{t("about.title")}</h1>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">{t("about.intro1")}</p>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">{t("about.intro2")}</p>
+        <p class="mt-6 text-lg text-ink-muted lg:text-xl">{t("about.intro3")}</p>
+      </div>
+
+      <div class="mt-16 lg:mt-20">
+        <h2 class="mb-10 font-serif text-4xl leading-tight text-ink lg:text-5xl">
+          {t("about.skills.title")}
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group) => (
+            <div>
+              <h3 class="mb-4 font-serif text-2xl leading-tight text-ink lg:text-3xl">
+                {group.heading}
+              </h3>
+              <ul class="space-y-2 text-lg text-ink-muted">
+                {group.items.map((item) => (
+                  <li class="flex items-center gap-3">
+                    <span class="size-2 shrink-0 bg-accent" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </Container>
   </Section>

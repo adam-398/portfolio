@@ -7,7 +7,7 @@ import LaptopWithPhone from "../components/LaptopWithPhone.astro";
 import AppCard from "../components/AppCard.astro";
 import trailWeightShot from "../assets/screenshots/trail-weight-hero.png";
 import waymarkShot from "../assets/screenshots/waymark-hero.png";
-import fiveCutShot from "../assets/screenshots/five-cut-hero.png";
+import fiveCutHero from "../assets/screenshots/five-cut-hero.png"
 import countedLaptopShot from "../assets/screenshots/stocktake-laptop-hero.png";
 import countedPhoneShot from "../assets/screenshots/stocktake-phone-hero.png";
 import myPhoto2 from "../assets/my-photo-2.png";
@@ -71,7 +71,7 @@ const base = lang === defaultLang ? "" : `/${lang}`;
             {t("index.featuredproject.description")}
           </p>
           <a
-            href={`${base}/contact/`}
+            href={`${base}/projects/#counted`}
             class="text-lg underline decoration-accent underline-offset-8 2xl:text-xl"
           >
             {t("index.featuredproject.cta")}
@@ -115,7 +115,7 @@ const base = lang === defaultLang ? "" : `/${lang}`;
           description={t("index.mobileapps.woodworking.description")}
           status={t("index.mobileapps.woodworking.status")}
           tech={t("index.mobileapps.woodworking.tech").split(", ")}
-          image={fiveCutShot}
+          image={fiveCutHero}
           imageAlt={t("index.mobileapps.woodworking.imagealt")}
         />
       </div>
