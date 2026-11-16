@@ -23,6 +23,7 @@ jobs:
         with:
           source: "dist"
           storageZoneName: ${{ secrets.BUNNY_STORAGE_NAME }}
+          storageEndpoint: "se.storage.bunnycdn.com"
           storagePassword: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
           pullZoneId: ${{ secrets.BUNNY_PULL_ZONE_ID }}
